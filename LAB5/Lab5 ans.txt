@@ -1,0 +1,142 @@
+import java.util.*;
+
+public class Main {
+   private static ArrayList<Book> list;
+   private static ArrayList<Borrower> list2;
+   
+public static void main(String[]args){
+    Scanner console = new Scanner(System.in);
+    String title,author,publisher,date;
+    list = new ArrayList<Book>();
+    
+    System.out.println("Enter Book Title: ");
+    title = console.next();
+    System.out.println("Enter Book Author: ");
+    author = console.next();
+    System.out.println("Enter Book Publisher: ");
+    publisher = console.next();
+    System.out.println("Enter Book Date: ");
+    date = console.next();
+    Book book_collection = new Book(title,author,publisher,date);
+    list.add(book_collection);
+   
+    
+    String name,address,contact_number;
+    
+        list2=new ArrayList<Borrower>();
+        System.out.print("Enter Borrower name: ");
+        name=console.next();
+        System.out.print("Enter Borrower address: ");
+        address=console.next();
+        System.out.print("Enter Borrower contact_number: ");
+        contact_number=console.next();
+        Borrower info=new Borrower(name,address,contact_number);
+        list2.add(info);
+        
+        for (Borrower b:list2) {
+            System.out.println("Borrower name is "+b.getName());
+            System.out.println("Borrower address is "+b.getAddress());
+            System.out.println("Borrower contact_number is "+b.getContact_number());
+            
+        }
+       
+
+
+
+
+ for( Book book : list ) {
+    System.out.println("Book Title is "+book.getTitle());
+    System.out.println("Book Author is "+book.getAuthor());
+    System.out.println("Book Publisher is "+book.getPublisher());
+    System.out.println("Book Date is "+book.getDate());
+    System.out.println("");
+  }       
+}      
+}
+
+___________________________________________________________
+
+import java.util.*;
+public class Borrower {
+    String name;
+    String address;
+    String contact_number;
+    
+    Borrower(String name,String address,String contact_number) {
+        this.name=name;
+        this.address=address;
+        this.contact_number=contact_number;
+    }
+    
+    public void setName(String n) {
+        name=n;
+    }
+    public void setAddress(String a) {
+        address=a;
+    }
+    public void serContact_number(String c) {
+        contact_number=c;
+    }
+    public String getName() {
+        return name;
+    }
+    public String getAddress() {
+        return address;
+    }
+    public String getContact_number() {
+        return contact_number;
+    }
+    
+}
+
+__________________________________________________________________
+
+public class Book {
+    private String title; 
+    private String author;
+    private String publisher;
+    private String date;
+    
+    public Book(String title,String author,String publisher,String date){
+        this.title = title;
+        this.author = author;
+        this.publisher = publisher;
+        this.date =date;
+    }
+    
+    public String getTitle(){
+        return this.title;
+    }
+    
+    public String getAuthor(){
+        return this.author;
+    }
+    
+    public String getPublisher(){
+        return this.publisher;
+    }
+    
+    public String getDate(){
+        return this.date;
+    }
+    
+    public void setTitle(String title){
+        this.title = title;
+    }
+    
+    public void setAuthor(String author){
+        this.author = author;
+    }
+    
+    public void setPublisher(String publisher){
+        this.publisher = publisher;
+    }
+    
+    public void setDate(String date){
+        this.date = date;
+    }
+       
+}
+
+    
+
